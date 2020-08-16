@@ -13,7 +13,7 @@ if(!empty($session['cart'])): ?>
             </tr>
             </thead>
             <tbody>
-            <?php foreach($session['cart'] as $id => $item):?>
+            <?php $i =1; foreach($session['cart'] as $id => $item):?>
                 <tr>
                     <td><?= \yii\helpers\Html::img("@web/products/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?></td>
                     <td><?= $item['title']?></td>
@@ -21,7 +21,7 @@ if(!empty($session['cart'])): ?>
                     <td><?= $item['price']?></td>
                     <td><span data-id="<?= $id?>" class="glyphicon glyphicon-remove text-danger del-item" aria-hidden="true"></span></td>
                 </tr>
-            <?php endforeach?>
+            <?php $i++; endforeach?>
             <tr>
                 <td colspan="4">Итого: </td>
                 <td id="cart-qty"><?= $session['cart.qty']?></td>

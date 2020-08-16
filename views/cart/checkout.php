@@ -15,48 +15,57 @@
         <!-- about -->
         <div class="privacy about">
             <h3>Оформление <span>заказа</span></h3>
-
+            <?php if(!isset($_SESSION['cart'])): ?>
             <div class="checkout-right">
                 <h4>Your shopping cart contains: <span>3 Products</span></h4>
-                <table class="timetable_sub">
-                    <thead>
-                    <tr>
-                        <th>SL No.</th>
-                        <th>Product</th>
-                        <th>Quality</th>
-                        <th>Product Name</th>
+                <div class="cart-table">
+                    <div class="overlay">
+                        <i class="fa fa-refresh fa-spin"></i>
+                    </div>
+                    <table class="timetable_sub">
+                        <thead>
+                        <tr>
+                            <th>SL No.</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Product Name</th>
 
-                        <th>Price</th>
-                        <th>Remove</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                            <th>Price</th>
+                            <th>Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $i =1; foreach ($_SESSION['cart'] as $id => $item): ?>
+                            <tr>
+                                <td class="invert"><?= $i ?></td>
+                                <td class="invert-image">
+                                    <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $id]) ?>">
+                                        <?= \yii\helpers\Html::img("@web/products/{$item['img']}", ['alt' => $item['title'], 'height' => 50]) ?>
+                                    </a>
+                                </td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+                                            <div class="entry value-minus">&nbsp;</div>
+                                            <div class="entry value"><span><?= $item['qty']?></span></div>
+                                            <div class="entry value-plus active">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert"><?= $item['title']?></td>
 
-                    <tr>
-                        <td class="invert">1</td>
-                        <td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive"></a></td>
-                        <td class="invert">
-                            <div class="quantity">
-                                <div class="quantity-select">
-                                    <div class="entry value-minus">&nbsp;</div>
-                                    <div class="entry value"><span>1</span></div>
-                                    <div class="entry value-plus active">&nbsp;</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="invert">Fortune Sunflower Oil</td>
+                                <td class="invert">$<?= $item['price']?></td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <a class="close1" href="<?= \yii\helpers\Url::to(['cart/delItem', 'id' => $id]) ?>"> </a>
+                                    </div>
 
-                        <td class="invert">$290.00</td>
-                        <td class="invert">
-                            <div class="rem">
-                                <div class="close1"> </div>
-                            </div>
+                                </td>
+                            </tr>
+                            <?php $i++; endforeach; ?>
+                        </tbody></table>
+                </div>
 
-                        </td>
-                    </tr>
-
-
-                    </tbody></table>
             </div>
             <div class="checkout-left">
                 <div class="col-md-4 checkout-left-basket">
@@ -120,7 +129,9 @@
                 <div class="clearfix"> </div>
 
             </div>
-
+            <?php else: ?>
+                <h3>Корзина пуста</h3>
+            <?php endif; ?>
         </div>
         <!-- //about -->
     </div>
