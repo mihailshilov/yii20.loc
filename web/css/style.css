@@ -84,6 +84,37 @@ i.badge.badge-notify.my-cart-badge {
 	top: 0;
 	cursor: pointer;
 }
+
+.cart-table{
+	position: relative;
+}
+
+.cart-table .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, .5);
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.cart-table td.invert-image a img{
+	width: 20%;
+}
+
+.cart-table .overlay .fa{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 30px;
+	margin-left: -15px;
+	margin-top: -15px;
+	color: #000000;
+}
+
 input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input[type="reset"],.agileinfo_mail_grid_left ul li a,.events_bottom_left2 ul li a,.w3ls_service_grids1_right a,ul.agileits_social_icons li a,.w3l_banner_nav_right_banner_pet a,.w3ls_w3l_banner_nav_right_grid_head_grid ul li a,.products-breadcrumb ul li a,.w3_footer_grid ul li a,.w3l_fresh_vegetables_grid ul li a,.wthree_footer_copy p a,.agile_top_brand_left_grid1 .button,.w3ls_logo_products_left1 ul.special_items li a,.w3ls_logo_products_left1 ul.phone_email li a{
 	transition: .5s ease-in;
 	-webkit-transition: .5s ease-in;
@@ -2589,7 +2620,7 @@ margin: 3em 0 0 0em;
 .checkout-left-basket ul li span {
     float: right;
 }
-.checkout-left-basket ul li:nth-child(5) {
+.checkout-left-basket ul li:last-child {
     font-size: 1em;
     color: #212121;
     font-weight: 600;
