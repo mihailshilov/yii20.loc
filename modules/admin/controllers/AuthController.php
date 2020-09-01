@@ -1,14 +1,13 @@
 <?php
 
-
 namespace app\modules\admin\controllers;
-
 
 use app\models\LoginForm;
 use Yii;
 
 class AuthController extends AppAdminController
 {
+
     public $layout = 'auth';
 
     public function actionLogin()
@@ -36,4 +35,5 @@ class AuthController extends AppAdminController
         return $this->redirect('/admin');
 //        return $this->goHome();
     }
+
 }

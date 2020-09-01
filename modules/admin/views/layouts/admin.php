@@ -53,7 +53,7 @@ desired effect
         <!-- Logo -->
         <a href="<?= Yii::$app->homeUrl ?>" class="logo" target="_blank">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>БЦР</b></span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>БЦР</b>МОТОРС</span>
         </a>
