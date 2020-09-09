@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="icon">
                 <i class="fa fa-list"></i>
             </div>
-            <a href="<?= \yii\helpers\Url::to(['/admin/order/index']) ?>" class="small-box-footer">
+            <a href="<?= \yii\helpers\Url::to(['/admin/category/index']) ?>" class="small-box-footer">
                 More info <i class="fa fa-arrow-circle-right"></i>
             </a>
         </div>

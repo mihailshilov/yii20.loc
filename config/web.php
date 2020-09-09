@@ -23,6 +23,9 @@ $config = [
         ],
     ],
     'components' => [
+        'formatter' => [
+            'datetimeFormat' => 'php:d F Y H:i:s',
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'IBh1Fko_6mjW6at4x1T_F9PyAbJWeT4M',
